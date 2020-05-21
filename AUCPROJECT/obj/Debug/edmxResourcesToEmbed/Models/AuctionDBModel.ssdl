@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AuctionsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Aution">
+    <Key>
+      <PropertyRef Name="idAution" />
+    </Key>
+    <Property Name="idAution" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FinishDate" Type="datetime" Nullable="false" />
+    <Property Name="InitialPrice" Type="real" Nullable="false" />
+    <Property Name="SoldPrice" Type="real" Nullable="false" />
+    <Property Name="AutionOwner" Type="int" Nullable="false" />
+    <Property Name="ProductOnSell" Type="int" Nullable="false" />
+    <Property Name="AuctionBuyer" Type="int" />
+    <Property Name="AuctionState" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bids">
+    <Key>
+      <PropertyRef Name="idBid" />
+    </Key>
+    <Property Name="idBid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+    <Property Name="Value" Type="real" Nullable="false" />
+    <Property Name="Bidder" Type="int" Nullable="false" />
+    <Property Name="Aution" Type="int" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="idCategory" />
+    </Key>
+    <Property Name="idCategory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="75" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContactData">
+    <Key>
+      <PropertyRef Name="idData" />
+    </Key>
+    <Property Name="idData" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Names" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="idProduct" />
+    </Key>
+    <Property Name="idProduct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="75" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="325" Nullable="false" />
+    <Property Name="Specs" Type="nvarchar" MaxLength="325" Nullable="false" />
+    <Property Name="Category" Type="int" Nullable="false" />
+    <Property Name="Product_img" Type="image" />
+    <Property Name="Product_img_1" Type="image" />
+    <Property Name="Product_img_2" Type="image" />
+    <Property Name="Product_img_3" Type="image" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nickname" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserInfo" Type="int" Nullable="false" />
+    <Property Name="Access" Type="bit" Nullable="false" />
+    <Property Name="Control" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Aution_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Aution" Type="Self.Aution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="idProduct" />
+      </Principal>
+      <Dependent Role="Aution">
+        <PropertyRef Name="ProductOnSell" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aution_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Aution" Type="Self.Aution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Aution">
+        <PropertyRef Name="AutionOwner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aution_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Aution" Type="Self.Aution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Aution">
+        <PropertyRef Name="AuctionBuyer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bids_Aution">
+    <End Role="Aution" Type="Self.Aution" Multiplicity="0..1" />
+    <End Role="Bids" Type="Self.Bids" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aution">
+        <PropertyRef Name="idAution" />
+      </Principal>
+      <Dependent Role="Bids">
+        <PropertyRef Name="Aution" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="idCategory" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_ContactData">
+    <End Role="ContactData" Type="Self.ContactData" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContactData">
+        <PropertyRef Name="idData" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="UserInfo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AuctionsDBModelStoreContainer">
+    <EntitySet Name="Aution" EntityType="Self.Aution" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bids" EntityType="Self.Bids" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContactData" EntityType="Self.ContactData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Aution_Product" Association="Self.FK_Aution_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Aution" EntitySet="Aution" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aution_User" Association="Self.FK_Aution_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Aution" EntitySet="Aution" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aution_User1" Association="Self.FK_Aution_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Aution" EntitySet="Aution" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bids_Aution" Association="Self.FK_Bids_Aution">
+      <End Role="Aution" EntitySet="Aution" />
+      <End Role="Bids" EntitySet="Bids" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Category" Association="Self.FK_Product_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_ContactData" Association="Self.FK_User_ContactData">
+      <End Role="ContactData" EntitySet="ContactData" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

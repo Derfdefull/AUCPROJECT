@@ -1,0 +1,319 @@
+﻿.bg-Login {
+    display: block;
+    border-radius: 15px;
+    background-color: snow;
+    border: solid 1px var(--main-color);
+}
+
+.link-help {
+   color: snow;
+   border: none;
+   margin: 0px auto;
+   background: none;
+   font-weight: bold;
+   text-decoration: underline;
+}
+
+.link-help-2 {
+    color: var(--main-color);
+    border: none;
+    margin: 0px auto;
+    background: none;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+    .link-help:hover, link-help-2:hover {
+        opacity: 0.9;    
+    }
+
+.check {
+    max-width: 15px;
+    max-height: 15px;
+    display: inline-block;
+    background-color: snow;
+    border: solid 1px var(--main-color);
+
+}
+
+.loginPanel {
+    color: snow;
+    margin: 35px;
+    padding: 25px;
+    width: 469px;
+    height: 600px;
+    display: block;
+    border-radius: 15px;
+}
+
+.bg-main{
+    background-color: var(--main-color);
+}
+
+bg-white{
+    background-color: snow;
+}
+
+.text-main {
+    color: var(--main-color);
+}
+
+.text-white {
+    color: snow;
+}
+
+.RegisterPanel {
+    color: var(--main-color);
+    margin: 35px;
+    padding: 0;
+    width: 469px;
+    height: 600px;
+    position: absolute;
+    border-radius: 15px;
+}
+
+.loginPanelRegister {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 15px;
+    background-color: var(--main-color);
+}
+
+.form-group{
+    padding: 5px 25px;
+ 
+}
+
+.form-group > label, input, small{
+    display: block;
+    
+}
+
+.form-group > label{
+    font-size: 20px;
+}
+
+    .form-group > small {
+        font-weight: 500;
+    }
+
+.LC::placeholder {
+    color: var(--main-color);
+}
+
+.RC::placeholder {
+    color: snow;
+}
+
+.form-group > input{
+   color: snow;
+   width: 100%;
+   height: 40px;
+   padding: 15px;
+   border: none;
+   border-radius: 15px;
+}
+
+.form-group > textarea {
+    padding: 15px;
+    color: snow;
+    min-width: 100%;
+    min-height: 130px;
+    max-height: 130px;
+    border-radius: 15px;
+    
+}
+
+.form-group > select {
+    padding: 15px;
+    color: snow;
+    max-width: 100%;
+    border-radius: 15px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color: var(--main-color);
+}
+
+.btn-sumit {
+    border: 2px solid;
+    border-radius: 25px;
+    width: auto;
+    height: 45px;
+    margin: 0 auto;
+    color: snow;
+    background-color: var(--main-color);
+}
+
+    .btn-sumit:hover {
+        border: 2px solid;
+        border-radius: 25px;
+        width: auto;
+        height: 45px;
+        margin: 0 auto;
+        color: var(--main-color);
+        background-color: snow;
+        transition: all .4s ease;
+    }
+
+.btn-sumit-2 {
+    border: 2px solid;
+    border-radius: 25px;
+    width: auto;
+    height: 45px;
+    margin: 0 auto;
+    color: var(--main-color);
+    background-color: snow;
+    display:block;
+}
+
+    .btn-sumit-2:hover {
+        border: 2px solid;
+        border-radius: 25px;
+        width: auto;
+        height: 45px;
+        margin: 0 auto;
+        color: snow;
+        background-color: var(--main-color);
+        transition: all .4s ease;
+    }
+
+
+.auc-panel{
+    padding: 15px 45px;
+    margin: 25px auto;
+    width: 100%;
+    min-height: 166px;
+    border: 2px solid var(--main-color);
+}
+
+.img-product {
+    margin: auto 0px;
+    width: 180px;
+    height: 135px;
+    object-fit: scale-down;
+    border-radius: 15px;
+    border: 2px solid var(--main-color);
+    background-color: snow;
+}
+
+.imglo:hover {
+    position: absolute;
+    top:0;
+    width: 400px;
+    height: auto;
+    z-index: 1;
+    transition: all ease 0.3s;
+    
+}
+
+    .item-desc{
+        width: 100%;
+        max-height: 80px;
+        overflow: auto;
+        font-size: 1rem;
+
+    }
+
+
+    .time-panel{
+        margin: auto 0px;
+    }
+
+    .time-panel > li {
+        color: snow;
+        padding: 1px;
+        font-size: 16px;
+        display: inline-block;
+        list-style-type: none;
+        text-transform: uppercase;
+        background-color: var(--main-color);
+    }
+
+        .time-panel > li span {
+            padding: 5px;
+            font-size: 15px;
+            display: inline-block;
+        }
+
+        .pool-panel{
+            overflow:  scroll;
+            max-height: 600px;
+        }
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(116, 37, 116, 0.5);
+}
+
+.notes {
+    min-height: 700px;
+    max-height: 700px;
+   
+    overflow: scroll;
+
+}
+
+.notes-link {
+    font-size: 20px;
+    text-decoration: none;
+    color: snow;
+}
+
+.notes-link:hover {
+    font-size: 25px;
+    text-decoration: none;
+    color: snow;
+}
+
+.note-card {
+    float: left;
+    margin: 15px;
+    width: 250px;
+    height: 70px;
+    min-width: 319px;
+    min-height: 500px;
+    margin: 15px auto;
+    border-radius: 15px;
+    background-color: snow;
+
+}
+
+
+
+.pub-panel {
+    margin: 25px auto;
+    
+    min-width: 940px;
+    max-width: 940px;
+    min-height: 785px;
+    margin-bottom: 5%;
+    color: var(--main-color);
+    border: solid 1px var(--main-color);
+    border-radius: 15px;
+    padding: 0px 10%;
+}
+
+.gallery > img {
+    width: 180px;
+    height: 135px;
+    object-fit: scale-down;
+    overflow: auto;
+    border: solid 1px var(--main-color);
+    border-radius: 15px;
+    margin: 0px 25px;
+   
+}
+
+
+

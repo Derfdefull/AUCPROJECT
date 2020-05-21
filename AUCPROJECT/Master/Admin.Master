@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="AUCPROJECT.Master.Admin" %>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/Style.css" rel="stylesheet" />   
+</head>
+
+<body>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../Scripts/jquery-3.0.0.js"></script>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="../Views/Login.aspx">Admin ESauctions</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="Solicitudes.aspx">Subastas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Usuarios.aspx">Usuarios</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="Categorias.aspx">Productos</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Reportes</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <br />
+    <form id="form1" runat="server">
+        <div class="container" >
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    
+    
+    <script src="../Scripts/popper.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+</body>
+</html>

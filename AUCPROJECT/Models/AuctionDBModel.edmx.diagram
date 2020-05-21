@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e8fe99f1f8ea4629894abb271e7ff6f7" Name="Diagram1">
+        <EntityTypeShape EntityType="AuctionsDBModel.Aution" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="AuctionsDBModel.Bids" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AuctionsDBModel.Category" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AuctionsDBModel.ContactData" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AuctionsDBModel.Product" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AuctionsDBModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AuctionsDBModel.User" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="AuctionsDBModel.FK_Aution_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="AuctionsDBModel.FK_Aution_User" ManuallyRouted="false" />
+        <AssociationConnector Association="AuctionsDBModel.FK_Aution_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="AuctionsDBModel.FK_Bids_Aution" ManuallyRouted="false" />
+        <AssociationConnector Association="AuctionsDBModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="AuctionsDBModel.FK_User_ContactData" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
