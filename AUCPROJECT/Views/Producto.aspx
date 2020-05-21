@@ -9,20 +9,32 @@
                 <div class="detail-product">
                         <h3 class="m-0"> <%= auction.Product.Name %>  </h3>
                         <h4 class="text-muted pl-2"> <small> por <%= db.User.First(st => st.idUser == auction.AutionOwner).ContactData.Names %> </small> </h4>
-                        
 
-                        <% if (auction.Product.Product_img != null) ProdImg.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(auction.Product.Product_img); %>
-                          
-                            <asp:Image  runat="server" ID="ProdImg"  CssClass="img-product imglo m-1" />
                         
-                        <% if (auction.Product.Product_img_1 != null) Image1.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(auction.Product.Product_img_1); %>
-                          <asp:Image  runat="server" ID="Image1"  CssClass="img-product imglo m-1"/>
-                        <br />
-                        <% if (auction.Product.Product_img_2 != null) Image2.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(auction.Product.Product_img_2); %>
-                              <asp:Image  runat="server" ID="Image2"  CssClass="img-product imglo m-1"/>
+                        <% if (auction.Product.Product_img != null) ProdImg.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(auction.Product.Product_img); else { Image3.Visible = false; }  %>
+                        <% if (auction.Product.Product_img_1 != null) Image1.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(auction.Product.Product_img_1);  else { Image3.Visible = false; } %>
+                        <% if (auction.Product.Product_img_2 != null) Image2.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(auction.Product.Product_img_2); else { Image3.Visible = false; }  %>
+                        <%if (auction.Product.Product_img_3 != null) Image3.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(auction.Product.Product_img_3); else { Image3.Visible = false; } %>
+                        
+                    <div class="row">
+                        <div class="col-6">
+                            <asp:Image  runat="server" ID="ProdImg"  CssClass="img-product imglo " />
+                          </div>
+                        <div class="col-6">
+                          <asp:Image  runat="server" ID="Image1"  CssClass="img-product imglo "/>
+                        </div>
+                        <div class="col-6">
+                             <asp:Image  runat="server" ID="Image2"  CssClass="img-product imglo "/>
+                        </div>
+                        <div class="col-6">
+                            <asp:Image  runat="server" ID="Image3"  CssClass="img-product imglo"/>
+                        </div>
+                    </div>
+                    
+                
+                              
 
-                        <%if (auction.Product.Product_img_3 != null) Image3.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(auction.Product.Product_img_3); %>
-                              <asp:Image  runat="server" ID="Image3"  CssClass="img-product imglo m-1"/>
+                              
                    
                     <br /> <br />
                     <hr />

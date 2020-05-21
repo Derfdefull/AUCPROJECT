@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 
-                    <div class="col-3">
+                    <div class="col-3 text-center">
                         <%if (auction.Bids.Count > 0)
                             {
                                 var aux = auction.Bids.ToList().Last();
