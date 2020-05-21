@@ -29,12 +29,7 @@
                         <div class="col-6">
                             <asp:Image  runat="server" ID="Image3"  CssClass="img-product imglo"/>
                         </div>
-                    </div>
-                    
-                
-                              
-
-                              
+                    </div>      
                    
                     <br /> <br />
                     <hr />

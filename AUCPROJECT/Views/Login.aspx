@@ -115,6 +115,13 @@
                             swal("Campos vacios", "No se aceptan campos vacios", "error");
                         </script>
                     <%}
+
+                     if (Request.QueryString["fb"] == "5")
+                    { %>
+                        <script>
+                            swal("Aun no puedes hacer eso!", "Debes tener una cuenta para acceder a las funciones del sistema, crea una en el panel de la derecha.", "info");
+                        </script>
+                    <%}
                 }%>
 
 </asp:Content>

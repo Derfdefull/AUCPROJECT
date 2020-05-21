@@ -35,7 +35,7 @@ namespace AUCPROJECT.Views
             }
             else
             {
-                Response.Redirect("~/Views/Login.aspx");
+                Response.Redirect("~/Views/Login.aspx?fb=5");
             }
         }
 
