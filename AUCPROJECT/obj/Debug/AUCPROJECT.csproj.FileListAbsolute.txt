@@ -58,3 +58,17 @@ C:\Users\Chave\OneDrive\Documentos\Visual Studio 2019\Project\AUCPROJECT\AUCPROJ
 C:\Users\Chave\OneDrive\Documentos\Visual Studio 2019\Project\AUCPROJECT\AUCPROJECT\obj\Debug\AUCPROJECT.dll
 C:\Users\Chave\OneDrive\Documentos\Visual Studio 2019\Project\AUCPROJECT\AUCPROJECT\obj\Debug\AUCPROJECT.pdb
 C:\Users\Chave\OneDrive\Documentos\Visual Studio 2019\Project\AUCPROJECT\AUCPROJECT\obj\Debug\AUCPROJECT.csprojAssemblyReference.cache
+C:\Users\Chave\OneDrive\Documentos\AUCPROJECT\AUCPROJECT\bin\AUCPROJECT.dll.config
+C:\Users\Chave\OneDrive\Documentos\AUCPROJECT\AUCPROJECT\bin\AUCPROJECT.dll
+C:\Users\Chave\OneDrive\Documentos\AUCPROJECT\AUCPROJECT\bin\AUCPROJECT.pdb
+C:\Users\Chave\OneDrive\Documentos\AUCPROJECT\AUCPROJECT\bin\EntityFramework.dll
+C:\Users\Chave\OneDrive\Documentos\AUCPROJECT\AUCPROJECT\bin\EntityFramework.SqlServer.dll
+C:\Users\Chave\OneDrive\Documentos\AUCPROJECT\AUCPROJECT\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Chave\OneDrive\Documentos\AUCPROJECT\AUCPROJECT\bin\EntityFramework.xml
+C:\Users\Chave\OneDrive\Documentos\AUCPROJECT\AUCPROJECT\bin\EntityFramework.SqlServer.xml
+C:\Users\Chave\OneDrive\Documentos\AUCPROJECT\AUCPROJECT\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Chave\OneDrive\Documentos\AUCPROJECT\AUCPROJECT\obj\Debug\AUCPROJECT.csprojAssemblyReference.cache
+C:\Users\Chave\OneDrive\Documentos\AUCPROJECT\AUCPROJECT\obj\Debug\AUCPROJECT.csproj.CoreCompileInputs.cache
+C:\Users\Chave\OneDrive\Documentos\AUCPROJECT\AUCPROJECT\obj\Debug\AUCPROJECT.csproj.CopyComplete
+C:\Users\Chave\OneDrive\Documentos\AUCPROJECT\AUCPROJECT\obj\Debug\AUCPROJECT.dll
+C:\Users\Chave\OneDrive\Documentos\AUCPROJECT\AUCPROJECT\obj\Debug\AUCPROJECT.pdb
