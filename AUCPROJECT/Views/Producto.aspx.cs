@@ -27,6 +27,13 @@ namespace AUCPROJECT.Views
                     user = (User)Session["UserLoged"];
                     var id = int.Parse(Request.QueryString["id"]);
                     auction = db.Aution.First(st => st.idAution == id);
+                    if(auction.FinishDate <= DateTime.Now && auction.AuctionBuyer == null)
+                    {
+                        var winner = db.Aution.Where(st => st.idAution == auction.idAution).First();
+                        winner.AuctionBuyer = auction.Bids.Last().Bidder;
+                        db.SaveChanges();
+                        Response.Redirect("~/Views/MiCuenta.aspx");
+                    }
                 }
                 else
                 {
@@ -53,6 +60,7 @@ namespace AUCPROJECT.Views
                     Aution = auction.idAution
                 };
                 auction.Bids.Add(bid);
+                auction.AuctionBuyer = user.idUser;
                 if(bid.Value < auction.Bids.Last().Value)
                 {
                     Response.Redirect(string.Format("~/Views/Producto.aspx?id={0}&fb=2", idprod));
@@ -69,7 +77,29 @@ namespace AUCPROJECT.Views
 
         protected void BtnBuy_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                var bidvalue = (float)auction.Bids.Count;
+                _ = auction.Bids.Count > 0 ? bidvalue += auction.Bids.Last().Value : bidvalue += 0;
+                var bid = new Bids()
+                {
+                    Value = bidvalue,
+                    Bidder = user.idUser,
+                    DateTime = DateTime.Now,
+                    Aution = auction.idAution
+                };
+                auction.Bids.Add(bid);
+                if (bid.Value < auction.Bids.Last().Value)
+                {
+                    Response.Redirect(string.Format("~/Views/Producto.aspx?id={0}&fb=2", idprod));
+                }
+                db.SaveChanges();
+                Response.Redirect(string.Format("~/Views/Producto.aspx?id={0}&fb=0", idprod));
+            }
+            catch (DbEntityValidationException)
+            {
+                Response.Redirect(string.Format("~/Views/Producto.aspx?id={0}", idprod));
+            }
         }
 
         protected void BtnCustom_Click(object sender, EventArgs e)

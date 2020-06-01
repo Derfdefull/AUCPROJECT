@@ -42,7 +42,7 @@
                         </div>
                     </div>
                 
-                    <div class="col-3">
+                    <div class="col-3 text-center">
                         <%if (auction.Bids.Count > 0)
                             {
                                 var aux = auction.Bids.ToList().Last();
@@ -71,7 +71,7 @@
                                     day = hour * 24;
 
                                 let countDown = new Date('<%= auction.FinishDate.ToString("MMM d, yyyy hh:mm:ss.F", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))%>').getTime(),
-                                    x = setInterval(function () {
+                                x = setInterval(function () {
 
                                         let d = '<%= auction.idAution %>' + 'days';
                                         let h = '<%= auction.idAution %>' + 'hours';
@@ -276,7 +276,7 @@
                 <!-- Subastas Finalizadas -->
               <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
 
-                   <%foreach(var fauct in AcAuctList) { %>
+                   <%foreach(var fauct in  FAuctList) { %>
                  
                   <div class="note-card p-2 m-2" >
                       <a href="Producto.aspx?id=<%= fauct.idAution %>" class="btn link d-flex" style="font-size: 12px; text-decoration:none ; "> 

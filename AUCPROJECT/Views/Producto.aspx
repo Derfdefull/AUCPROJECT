@@ -66,7 +66,7 @@
                         
                         <%} %>
                         <h6> Termina en </h6>
-                          <ul class="m-0 p-0 time-panel">
+                          <ul id="<%= auction.idAution %>" class="m-0 p-0 time-panel">
                             <li><span id="days"></span></li>
                             <li><span id="hours"></span></li>
                             <li><span id="minutes"></span></li>
@@ -105,7 +105,8 @@
                         %>
                  <br />
 
-
+                 <%if (auction.FinishDate >= DateTime.Now)
+                           { %>
                          <div class="d-flex text-center">
                              <div class="col-3"></div>
                              <asp:TextBox runat="server" ID="TxtBidValue" placeholder="Valor de tu puja." CssClass="form-control col-4 " TextMode="number" >  </asp:TextBox>
@@ -114,11 +115,13 @@
                          </div>
              
 
-                 <hr />
+                         <hr />
                          <asp:Button ID="BtnPull" runat="server" CssClass="btn btn-sumit" OnClick="BtnPull_Click"/>
                          <asp:Button ID="BtnBuy" runat="server" CssClass="btn btn-sumit" OnClick="BtnBuy_Click"/>
+
                          
-                    <%} else { %>
+                    <%}
+                           } else { %>
 
                     <h2> Eres dueño de esta subasta no puedes participar en ella.</h2>
 
@@ -148,12 +151,12 @@
           minute = second * 60,
           hour = minute * 60,
           day = hour * 24;
-       let countDown = new Date('<%= auction.FinishDate.ToString("MMM d, yyyy hh:mm:ss.F", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))%>').getTime(),
-                                    x = setInterval(function () {  
+          let countDown = new Date('<%= auction.FinishDate.ToString("MMM d, yyyy hh:mm:ss.F", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))%>').getTime(),
+          x = setInterval(function () {  
 
               let now = new Date().getTime(),
                   distance = countDown - now;
-
+                  console.log(distance);
                   document.getElementById('days').innerText = Math.floor(distance / (day)) + ' D',
                   document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)) + ' H',
                   document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)) + ' M',
