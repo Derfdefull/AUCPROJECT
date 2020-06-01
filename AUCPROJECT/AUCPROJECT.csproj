@@ -216,6 +216,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\AcercaDe.aspx" />
+    <Content Include="Views\ASubastas.aspx" />
     <Content Include="Views\Categorias.aspx" />
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\MiCuenta.aspx" />
@@ -294,6 +295,13 @@
     </Compile>
     <Compile Include="Views\AcercaDe.aspx.designer.cs">
       <DependentUpon>AcercaDe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ASubastas.aspx.cs">
+      <DependentUpon>ASubastas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ASubastas.aspx.designer.cs">
+      <DependentUpon>ASubastas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Categorias.aspx.cs">
       <DependentUpon>Categorias.aspx</DependentUpon>

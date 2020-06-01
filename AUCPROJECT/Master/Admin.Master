@@ -27,7 +27,10 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="Solicitudes.aspx">Subastas</a>
+        <a class="nav-link" href="ASubastas.aspx">Subastas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Solicitudes.aspx">Solicitudes</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="Usuarios.aspx">Usuarios</a>
