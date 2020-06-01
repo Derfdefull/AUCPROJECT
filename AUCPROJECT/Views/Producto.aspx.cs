@@ -108,33 +108,31 @@ namespace AUCPROJECT.Views
             {
                 if(TxtBidValue.Text.Trim() != "" )
                 {
-
-                    float value = 0;
                     try
                     {
+                       float value = 0;
                        value = float.Parse(TxtBidValue.Text);
 
+                        var bid = new Bids()
+                        {
+                            Value = value,
+                            Bidder = user.idUser,
+                            DateTime = DateTime.Now,
+                            Aution = auction.idAution
+                        };
+                        auction.Bids.Add(bid);
+
+                        if (bid.Value < auction.Bids.Last().Value)
+                        {
+                            Response.Redirect(string.Format("~/Views/Producto.aspx?id={0}&fb=2", idprod));
+                        }
+                        db.SaveChanges();
+                        Response.Redirect(string.Format("~/Views/Producto.aspx?id={0}&fb=0", idprod));
                     }
                     catch (Exception)
                     {
                         Response.Redirect(string.Format("~/Views/Producto.aspx?id={0}&fb=3", idprod));
                     }
-
-                    var bid = new Bids()
-                    {
-                        Value = value,
-                        Bidder = user.idUser,
-                        DateTime = DateTime.Now,
-                        Aution = auction.idAution
-                    };
-                    auction.Bids.Add(bid);
-                    if (bid.Value < auction.Bids.Last().Value)
-                    {
-                        Response.Redirect(string.Format("~/Views/Producto.aspx?id={0}&fb=2", idprod));
-                    }
-                    db.SaveChanges();
-                    Response.Redirect(string.Format("~/Views/Producto.aspx?id={0}&fb=0", idprod));
-
                 }
                 Response.Redirect(string.Format("~/Views/Producto.aspx?id={0}&fb=3", idprod));
             }
